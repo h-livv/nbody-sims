@@ -1,19 +1,22 @@
 # N-body Simulations
 
-Physics simulations written in C++, with Python scripts for plotting and animation. This is built to learn the language by simulating physical systems, with the goal of a general optimized N-body solver.
+Physics simulations written in C++, with Python scripts for visualization. This is built to learn C++ by simulating physical systems, with the goal of a general optimized N-body solver.
 
 ## Current
 
-### N bodies under the effect of one large body and mutual gravitational fields.
+### 3D Gravitational N-body Simulation
 
-![Three-body simulation](n-body/n-body.png)
+A 3D simulation with a fixed, massive central body and surrounding particles that interact through mutual gravitational attraction.
+
+![N-body simulation](n-body/n-body.png)
 
 ## Reproduce it
 
 From the root:
 ```
+python -m pip install pygame-ce PyOpenGL PyOpenGL_accelerate
 cd n-body
-g++ n-body.cpp -o n-body
+g++ -std=c++17 n-body.cpp -o n-body
 ./n-body
 python animate_n_body.py
 ```
