@@ -4,12 +4,22 @@ Physics simulations written in C++, with Python scripts for plotting and animati
 
 ## Current
 
-### **N-body simulation** (`n-body/`): n bodies under the effect of one large body and mutual gravitational fields.
+### N bodies under the effect of one large body and mutual gravitational fields.
 
 ![Three-body simulation](n-body/n-body.png)
 
+## Reproduce it
+
+From the root:
+```
+cd n-body
+g++ n-body.cpp -o n-body
+./n-body
+python animate_n_body.py
+```
 
 ## Planned
 
 - Symplectic integrators
 - Optimization algorithms to make it scale to larger N
+- Exploration of the Fast Multipole Method
