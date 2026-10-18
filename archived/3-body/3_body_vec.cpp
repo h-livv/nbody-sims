@@ -20,15 +20,24 @@ struct Vec2 {
 };
 
 Vec2 operator-(const Vec2& a, const Vec2& b) {
-    return {a.x - b.x, a.y - b.y};
+    return {
+        a.x - b.x,
+        a.y - b.y
+    };
 }
 
 Vec2 operator*(double scalar, const Vec2& v) {
-    return {scalar * v.x, scalar * v.y};
+    return {
+        scalar * v.x,
+        scalar * v.y
+    };
 }
 
 double norm(const Vec2& v) {
-    return std::hypot(v.x, v.y);
+    return std::hypot(
+        v.x,
+        v.y
+    );
 }
 
 

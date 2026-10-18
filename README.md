@@ -1,21 +1,15 @@
 # N-body Simulations
 
-Physics simulations written in C++, with Python (matplotlib) scripts for plotting and animation. This is built to learn the language by simulating physical systems, with the goal of a general N-body solver.
+Physics simulations written in C++, with Python scripts for plotting and animation. This is built to learn the language by simulating physical systems, with the goal of a general optimized N-body solver.
 
 ## Current
 
-### **Bouncing ball** (`bouncing_ball/`): a ball dropped under gravity with inelastic floor collisions.
+### **N-body simulation** (`n-body/`): n bodies under the effect of one large body and mutual gravitational fields.
 
-![Bouncing ball height vs time](bouncing_ball/height_vs_time.png)
+![Three-body simulation](n-body/n-body.png)
 
-### **Three-body problem** (`3_body/`): three gravitating bodies, with initial conditions perturbed on purpose to explore chaotic behaviour.
-
-![Three-body simulation](3_body/still.png)
-
-![Sensitivity to initial conditions](3_body/sensitivity.png)
 
 ## Planned
 
 - Symplectic integrators
-- N-body gravitational simulation
 - Optimization algorithms to make it scale to larger N
