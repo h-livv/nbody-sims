@@ -21,8 +21,7 @@ CSV_FILE = "n_body.csv"
 
 # These match the radius values in your C++ simulation.
 # They are not stored in the CSV, so we specify them here.
-CENTRAL_RADIUS = 2.0
-PARTICLE_RADIUS = 0.5
+PARTICLE_RADIUS = 0.1
 
 CAMERA_DISTANCE = 60.0
 TRAIL_LENGTH = 60
@@ -221,13 +220,8 @@ def draw_spheres(frame_index):
     for i, position in enumerate(current):
         x, y, z = position
 
-        # Body zero in C++ corresponds to the first CSV body.
-        if i == 0:
-            radius = CENTRAL_RADIUS
-            glColor3f(1.0, 0.42, 0.08)   # Orange
-        else:
-            radius = PARTICLE_RADIUS
-            glColor3f(0.12, 0.72, 1.0)   # Cyan-blue
+        radius = PARTICLE_RADIUS
+        glColor3f(0.12, 0.72, 1.0)   # Cyan-blue
 
         glPushMatrix()
 
@@ -246,29 +240,29 @@ def draw_spheres(frame_index):
 def draw_glows(frame_index):
     current = frames[frame_index]
 
-    # Glow is a screen-space effect, not the physical radius.
     glDisable(GL_LIGHTING)
     glDisable(GL_DEPTH_TEST)
     glDepthMask(GL_FALSE)
 
-    # Additive blending makes light accumulate.
+    # Additive blending for a luminous effect.
     glBlendFunc(GL_SRC_ALPHA, GL_ONE)
 
-    # Central body's wide orange halo.
-    glPointSize(60.0)
-
+    # Broad, subtle blue halo.
+    glPointSize(5.0)
     glBegin(GL_POINTS)
-    glColor4f(1.0, 0.20, 0.015, 0.16)
-    glVertex3fv(current[0])
+
+    for position in current:
+        glColor4f(0.0, 0.45, 1.0, 0.20)
+        glVertex3fv(position)
+
     glEnd()
 
-    # Broader cyan halos.
-    glPointSize(15.0)
-
+    # Smaller, brighter halo.
+    glPointSize(9.0)
     glBegin(GL_POINTS)
 
-    for position in current[1:]:
-        glColor4f(0.0, 0.60, 1.0, 0.22)
+    for position in current:
+        glColor4f(0.15, 0.75, 1.0, 0.18)
         glVertex3fv(position)
 
     glEnd()
@@ -301,7 +295,7 @@ def draw_trails(frame_index):
     glBegin(GL_LINES)
 
     # Skip body 0: it is fixed at the center.
-    for i in range(1, n):
+    for i in range(0, n):
         for k in range(start + 1, frame_index + 1):
             fraction = (k - start) / (frame_index - start)
             alpha = 0.05 + 0.75 * fraction

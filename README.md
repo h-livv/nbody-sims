@@ -6,7 +6,7 @@ Physics simulations written in C++, with Python scripts for visualization. This 
 
 ### 3D Gravitational N-body Simulation
 
-A 3D simulation with a fixed, massive central body and surrounding particles that interact through mutual gravitational attraction.
+A 3D simulation of particles that interact through mutual gravitational attraction.
 
 ![N-body simulation](n-body/n-body.png)
 
