@@ -1,6 +1,6 @@
 # N-body Simulations
 
-Physics simulations written in C++, with Python scripts for visualization. This is built to learn C++ by simulating physical systems, with the goal of a general optimized N-body solver.
+N-body simulations written in C++. This is built to learn the language by simulating physical systems, with the goal of a general optimized N-body solver.
 
 ## Current
 
