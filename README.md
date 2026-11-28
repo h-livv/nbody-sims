@@ -18,7 +18,7 @@ A 3D simulation of particles that interact through mutual gravitational attracti
 
 ### Particle Accelerator
 
-A particle accelerator simulator. It currently uses the Boris pusher to simulate a charged particle in a uniform magnetic field. See [`accelerator/README.md`](accelerator/README.md).
+A particle accelerator simulator. It currently uses the Boris pusher to simulate a charged particle in a uniform magnetic field (E = 0).
 
 ![Particle trajectory](accelerator/mag_field.png)
 
