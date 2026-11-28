@@ -1,6 +1,6 @@
 # Physics in C++
 
-A single repository for learning C++ by implementing physics simulations from scratch. Each project is written in C++, with Python scripts for visualization.
+A single repository for learning C++ by implementing physics simulations from scratch.
 
 ## Projects
 
