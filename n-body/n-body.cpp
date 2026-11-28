@@ -10,7 +10,6 @@ const double dt = 0.01;
 const double G = 10.0;
 const int n = 250;
 
-
 // Type definitions
 
 // Define a type representing a 3D vector with x, y, and z components
@@ -42,8 +41,6 @@ struct Body {
     double mass{1.0};
     double radius{0.5};
 };
-
-
 
 // Mathematical operations
 
@@ -91,7 +88,6 @@ void populate (std::vector<Body>& bodies) {
         };
     }
 }
-
 
 void compute_acc(std::vector<Body>& bodies, double G) {
 
